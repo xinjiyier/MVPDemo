@@ -46,8 +46,16 @@ public class MyAdapter extends BaseAdapter
         MyViewHolder viewHolder = null;
         if (convertView == null)
         {
+            //changed by xinjiyier 2017/09/18
+            //Attempt to invoke virtual method 'android.view.View android.view.View.findViewById(int)' on a null object reference
+            //so changed 
+            /*
             viewHolder = new MyViewHolder(convertView);
             convertView = View.inflate(mContext, R.layout.lst_item, null);
+            */
+            convertView = View.inflate(mContext, R.layout.lst_item, null);
+            viewHolder = new MyViewHolder(convertView);
+            //end
             convertView.setTag(viewHolder);
         }
         else
